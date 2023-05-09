@@ -7,8 +7,7 @@ public class RocketControls : MonoBehaviour
     internal float DirX;
     internal float DirY;
 
-    internal float Fuel;
-
+    internal float Fuel = GlobalData.MaxFuel;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -34,6 +33,6 @@ public class RocketControls : MonoBehaviour
     void Thrust()
     {
         rb.AddForce(DirY * GlobalData.Thrust * transform.up);
-
+        Fuel -= 0.1f;
     }
 }
