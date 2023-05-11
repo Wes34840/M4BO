@@ -6,6 +6,7 @@ public class CameraScript : MonoBehaviour
 {
 
     private Transform Target;
+    public bool rocketIsMovingUp;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,11 @@ public class CameraScript : MonoBehaviour
         if (Target.position.y >= transform.position.y)
         {
             transform.position = new Vector3(Target.position.x, Target.position.y, -10f);
+            rocketIsMovingUp = true;
+        }
+        else
+        {
+            rocketIsMovingUp = false;
         }
     }
 }

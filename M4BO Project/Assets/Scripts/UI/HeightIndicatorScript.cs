@@ -8,18 +8,23 @@ public class HeightIndicatorScript : MonoBehaviour
 
     Transform Rocket;
     Slider Indicator;
+    CameraScript cam;
 
     // Start is called before the first frame update
     void Start()
     {
         Indicator = GetComponent<Slider>();
         Rocket = GameObject.Find("Rocket").GetComponent<Transform>() ;
+        cam = GameObject.Find("Main Camera").GetComponent<CameraScript>();
         Indicator.maxValue = GlobalData.EndHeight;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Indicator.value = Rocket.position.y;
+        if (cam.rocketIsMovingUp == true)
+        {
+            Indicator.value = Rocket.position.y;
+        }
     }
 }
