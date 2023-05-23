@@ -26,5 +26,6 @@ public class CameraScript : MonoBehaviour
         {
             rocketIsMovingUp = false;
         }
+        transform.position = new Vector3(Target.position.x, transform.position.y, -10f);
     }
 }

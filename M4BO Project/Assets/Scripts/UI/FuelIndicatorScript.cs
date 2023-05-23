@@ -14,7 +14,7 @@ public class FuelIndicatorScript : MonoBehaviour
     {
         FuelIndicator = GetComponent<Slider>();
         Rocket = GameObject.Find("Rocket").GetComponent<RocketControls>();
-        FuelIndicator.maxValue = Rocket.Fuel;
+        FuelIndicator.maxValue = GlobalData.MaxFuel;
     }
 
     // Update is called once per frame
