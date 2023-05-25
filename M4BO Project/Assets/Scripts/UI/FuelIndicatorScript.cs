@@ -8,6 +8,7 @@ public class FuelIndicatorScript : MonoBehaviour
 
     Slider FuelIndicator;
     RocketControls Rocket;
+    [SerializeField] private GameObject fill;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,9 @@ public class FuelIndicatorScript : MonoBehaviour
     void Update()
     {
         FuelIndicator.value = Rocket.Fuel;
+        if (Rocket.Fuel <= 0)
+        {
+            fill.SetActive(false);
+        }
     }
 }
