@@ -42,9 +42,13 @@ public class RocketControls : MonoBehaviour
 
     private void Thrust()
     {
-        if (rb.velocity.magnitude <= GlobalData.MaxSpeed)
+        Debug.Log(GlobalData.MaxSpeed);
+
+        rb.AddForce(DirY * GlobalData.Thrust * transform.up);
+
+        if (rb.velocity.y >= GlobalData.MaxSpeed)
         {
-            rb.AddForce(DirY * GlobalData.Thrust * transform.up);
+            rb.velocity = new Vector2(rb.velocity.x, GlobalData.MaxSpeed);
         }
         Fuel -= 0.1f;
     }

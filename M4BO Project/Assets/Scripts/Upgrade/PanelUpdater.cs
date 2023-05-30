@@ -28,10 +28,8 @@ public class PanelUpdater : MonoBehaviour
             Debug.Log(panel.name);
             Transform[] PanelComponents = panel.GetComponentsInChildren<Transform>();
             TMP_Text[] textFields = new TMP_Text[3];
-            foreach (Transform panelComponent in PanelComponents) 
+            foreach (Transform panelComponent in PanelComponents)
             {
-                string statLevel = GlobalData.RocketStats[count].StatLevel.ToString();
-                string statUpgradeCost = GlobalData.RocketStats[count].StatUpgradeCost.ToString();
 
                 if (panelComponent.name == "Name")
                 {
@@ -40,12 +38,12 @@ public class PanelUpdater : MonoBehaviour
                 else if (panelComponent.name == "StatLevel")
                 {
                     textFields[1] = panelComponent.GetComponent<TMP_Text>();
-                    textFields[1].text = statLevel;
+                    textFields[1].text = GlobalData.RocketStats[count].StatLevel.ToString();
                 }
                 else if (panelComponent.name == "Cost")
                 {
                     textFields[2] = panelComponent.GetComponent<TMP_Text>();
-                    textFields[2].text = "Cost: " + statUpgradeCost;
+                    textFields[2].text = "Cost: " + GlobalData.RocketStats[count].StatUpgradeCost;
                 }
             }
 
