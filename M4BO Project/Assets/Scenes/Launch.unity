@@ -3719,7 +3719,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada28a8fcd98107439c4bef24c012a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 5825538613748110645, guid: f17f9ff357a7944469b4e73f4600bae2, type: 3}
+  lowAltitudeObst:
+  - {fileID: 5825538613748110645, guid: f17f9ff357a7944469b4e73f4600bae2, type: 3}
+  - {fileID: 5825538613748110645, guid: f5576bd0b6cbd11448de92310d06dd6b, type: 3}
+  - {fileID: 5825538613748110645, guid: 3a55ececcd409ab4e83deffa1bab2111, type: 3}
+  mediumAltitudeObst:
+  - {fileID: 5825538613748110645, guid: 3a409828086b121498da31fa2c683184, type: 3}
+  - {fileID: 5825538613748110645, guid: 58bf94cf8dd475344b2dc5c2c69b9ecd, type: 3}
+  - {fileID: 5825538613748110645, guid: 8b838071d922a8c48a5c82a5fae8ede9, type: 3}
+  highAltitudeObst:
+  - {fileID: 5825538613748110645, guid: eb69acc7b5a3e5843b10c9c54bc6659f, type: 3}
+  - {fileID: 5825538613748110645, guid: e907ef85fb3836049bbf1aa463842a48, type: 3}
+  - {fileID: 5825538613748110645, guid: 221a645ac79b9bb49bd3f7303b55e9b5, type: 3}
 --- !u!1 &1980199922
 GameObject:
   m_ObjectHideFlags: 0

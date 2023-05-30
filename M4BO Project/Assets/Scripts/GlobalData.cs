@@ -18,11 +18,10 @@ public class GlobalData
     internal static Stat ThrustData = new Stat("Thrust", 1, 500, 2);
     internal static Stat MaxSpeedData = new Stat("Max Speed", 1, 500, 5);
 
-    public static List<Stat> RocketStats = new List<Stat>()
+    public static List<Stat> RocketStats = new List<Stat>(3)
     {
         MaxFuelData, ThrustData, MaxSpeedData
     };
-    public static int MaxFuelLevel;
 
 
 
