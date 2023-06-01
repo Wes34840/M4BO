@@ -7,7 +7,6 @@ public class PanelUpdater : MonoBehaviour
 {
     internal List<TMP_Text[]> PanelTextFields = new List<TMP_Text[]>();
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -43,7 +42,7 @@ public class PanelUpdater : MonoBehaviour
                 else if (panelComponent.name == "Cost")
                 {
                     textFields[2] = panelComponent.GetComponent<TMP_Text>();
-                    textFields[2].text = "Cost: " + GlobalData.RocketStats[count].StatUpgradeCost;
+                    textFields[2].text = GlobalData.RocketStats[count].StatUpgradeCost.ToString();
                 }
             }
 

@@ -16,6 +16,16 @@ public class ShowMoneyInShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextField.text = "Money: " + GlobalData.Money;
+
+        TextField.text = GlobalData.Money.ToString();
+
+        if (GlobalData.Money > 1000)
+        {
+            TextField.text = (Mathf.Round(GlobalData.Money / 1000 * 10)/10) + "K";
+        }
+        else if (GlobalData.Money > 1000000)
+        {
+            TextField.text = (Mathf.Round(GlobalData.Money / 1000 * 10) / 10) + "M";
+        }
     }
 }

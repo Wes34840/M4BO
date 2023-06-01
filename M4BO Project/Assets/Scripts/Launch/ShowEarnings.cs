@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShowEarnings : MonoBehaviour
 {
-    TMP_Text heightEarningsTextField, timeEarningsTextField, pickupEarningsTextField, totalEarningsTextField;
+    TMP_Text heightEarningsTextField, timeEarningsTextField, pickupEarningsTextField, totalEarningsTextField, totalMoneyTextField;
     private float heightEarnings, timeEarnings, pickupEarnings = 0;
     public float totalEarnings = 0;
 
@@ -16,7 +16,7 @@ public class ShowEarnings : MonoBehaviour
         timeEarningsTextField = GameObject.Find("FlightTimeEarnings").GetComponent<TMP_Text>();
         pickupEarningsTextField = GameObject.Find("PickupEarnings").GetComponent<TMP_Text>();
         totalEarningsTextField = GameObject.Find("TotalEarnings").GetComponent<TMP_Text>();
-
+        totalMoneyTextField = GameObject.Find("TotalMoney").GetComponent <TMP_Text>();
     }
 
     void Update()
@@ -39,7 +39,8 @@ public class ShowEarnings : MonoBehaviour
         heightEarningsTextField.text = "Height: " + heightEarnings;
         timeEarningsTextField.text = "Time; " + timeEarnings;
         pickupEarningsTextField.text = "Pickups: " + pickupEarnings;
-        totalEarningsTextField.text = "Total: " + totalEarnings;
+        totalEarningsTextField.text = "Total Earned: " + totalEarnings;
+        totalMoneyTextField.text = "Money: " + (GlobalData.Money += totalEarnings);
     }
     
     internal void AwardMoney()

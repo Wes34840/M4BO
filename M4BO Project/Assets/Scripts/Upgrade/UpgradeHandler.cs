@@ -70,7 +70,14 @@ public class UpgradeHandler : MonoBehaviour
 
     private void UpdateUpgradePanel(Stat stat, int textFieldIndex)
     {
-        panelUpdater.PanelTextFields[textFieldIndex][1].text = "" + stat.StatLevel;
-        panelUpdater.PanelTextFields[textFieldIndex][2].text = "Cost: " + stat.StatUpgradeCost;
+        panelUpdater.PanelTextFields[textFieldIndex][1].text = stat.StatLevel.ToString();
+        if (stat.StatUpgradeCost > 1000)
+        {
+            panelUpdater.PanelTextFields[textFieldIndex][2].text = stat.StatUpgradeCost.ToString();
+        }
+        else if (stat.StatUpgradeCost > 1000000)
+        {
+
+        }
     }
 }
