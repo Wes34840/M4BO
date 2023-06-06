@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UpgradeHandler : MonoBehaviour
 {
@@ -70,14 +71,7 @@ public class UpgradeHandler : MonoBehaviour
 
     private void UpdateUpgradePanel(Stat stat, int textFieldIndex)
     {
-        panelUpdater.PanelTextFields[textFieldIndex][1].text = stat.StatLevel.ToString();
-        if (stat.StatUpgradeCost > 1000)
-        {
-            panelUpdater.PanelTextFields[textFieldIndex][2].text = stat.StatUpgradeCost.ToString();
-        }
-        else if (stat.StatUpgradeCost > 1000000)
-        {
-
-        }
+        panelUpdater.DisplayInt(panelUpdater.PanelTextFields[textFieldIndex][1], stat.StatLevel);
+        panelUpdater.DisplayInt(panelUpdater.PanelTextFields[textFieldIndex][2], stat.StatUpgradeCost);
     }
 }

@@ -48,6 +48,7 @@ public class LaunchHandler : MonoBehaviour
         LaunchData.HeightReached = heightSlider.value;
         earningsUI.SetActive(true);
         GameActive = false;
+        Debug.Log("Awarded money");
         earningsScript.AwardMoney();
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class PanelUpdater : MonoBehaviour
@@ -37,12 +38,12 @@ public class PanelUpdater : MonoBehaviour
                 else if (panelComponent.name == "StatLevel")
                 {
                     textFields[1] = panelComponent.GetComponent<TMP_Text>();
-                    textFields[1].text = GlobalData.RocketStats[count].StatLevel.ToString();
+                    DisplayInt(textFields[1], GlobalData.RocketStats[count].StatLevel);
                 }
                 else if (panelComponent.name == "Cost")
                 {
                     textFields[2] = panelComponent.GetComponent<TMP_Text>();
-                    textFields[2].text = GlobalData.RocketStats[count].StatUpgradeCost.ToString();
+                    DisplayInt(textFields[2], GlobalData.RocketStats[count].StatUpgradeCost);
                 }
             }
 
@@ -50,6 +51,21 @@ public class PanelUpdater : MonoBehaviour
             count++;
         }
 
+    }
+
+    internal void DisplayInt(TMP_Text textField, int amount)
+    {
+        textField.text = amount.ToString(); // if amount is under 1000, display normally
+
+        if (amount >= 1000)
+        {
+            textField.text = (Mathf.Round(amount / 1000 * 10) / 10) + "K"; // if amount is in the thousands, abbreviate with K
+        }
+        else if (amount >= 1000000)
+        {
+
+            textField.text = (Mathf.Round(amount / 1000000 * 10) / 10) + "M"; // if amount is in the millions, abbreviate with M
+        }
     }
 
 }

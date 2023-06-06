@@ -40,7 +40,7 @@ public class ShowEarnings : MonoBehaviour
         timeEarningsTextField.text = "Time; " + timeEarnings;
         pickupEarningsTextField.text = "Pickups: " + pickupEarnings;
         totalEarningsTextField.text = "Total Earned: " + totalEarnings;
-        totalMoneyTextField.text = "Money: " + (GlobalData.Money += totalEarnings);
+        totalMoneyTextField.text = "Money: " + GlobalData.Money;
     }
     
     internal void AwardMoney()
