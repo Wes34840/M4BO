@@ -47,7 +47,8 @@ public class UpgradeHandler : MonoBehaviour
         // Pretty much a bandaid fix but I don't fucking care, it works
         GlobalData.MaxFuel = 100 + ((GlobalData.RocketStats[0].StatLevel-1) * GlobalData.RocketStats[0].StatMagnitude);
         GlobalData.Thrust = 8 + ((GlobalData.RocketStats[1].StatLevel-1) * GlobalData.RocketStats[1].StatMagnitude);
-        GlobalData.MaxSpeed = 5 + ((GlobalData.RocketStats[2].StatLevel-1) * GlobalData.RocketStats[2].StatMagnitude);
+        GlobalData.MaxSpeed = 5 + ((GlobalData.RocketStats[2].StatLevel - 1) * GlobalData.RocketStats[2].StatMagnitude);
+        GlobalData.MaxHealth = 5 + ((GlobalData.RocketStats[3].StatLevel - 1) * GlobalData.RocketStats[3].StatMagnitude);
 
     }
 

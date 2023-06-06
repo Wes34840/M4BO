@@ -12,15 +12,16 @@ public class GlobalData
     internal static float MaxFuel = 100f;
     internal static float Thrust = 8f;
     internal static float MaxSpeed = 5f;
-
+    internal static float MaxHealth = 5f;
 
     internal static Stat MaxFuelData = new Stat("Max Fuel", 1, 500, 20);
     internal static Stat ThrustData = new Stat("Thrust", 1, 500, 2);
     internal static Stat MaxSpeedData = new Stat("Max Speed", 1, 500, 3);
+    internal static Stat MaxHealthData = new Stat("Max Health", 1, 500, 2);
 
     public static List<Stat> RocketStats = new List<Stat>(3)
     {
-        MaxFuelData, ThrustData, MaxSpeedData
+        MaxFuelData, ThrustData, MaxSpeedData, MaxHealthData
     };
 
 

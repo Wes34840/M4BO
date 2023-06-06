@@ -59,12 +59,12 @@ public class PanelUpdater : MonoBehaviour
 
         if (amount >= 1000)
         {
-            textField.text = (Mathf.Round(amount / 1000 * 10) / 10) + "K"; // if amount is in the thousands, abbreviate with K
+            textField.text = (Mathf.Round(amount * 10 / 1000 ) /10) + "K"; // if amount is in the thousands, abbreviate with K
         }
         else if (amount >= 1000000)
         {
 
-            textField.text = (Mathf.Round(amount / 1000000 * 10) / 10) + "M"; // if amount is in the millions, abbreviate with M
+            textField.text = (Mathf.Round(amount * 10 / 1000000) / 10) + "M"; // if amount is in the millions, abbreviate with M
         }
     }
 

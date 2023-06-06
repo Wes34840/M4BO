@@ -11,8 +11,8 @@ public class RocketControls : MonoBehaviour
 
     internal float maxFuel;
     internal float Fuel;
-    Rigidbody2D rb;
 
+    internal Rigidbody2D rb;
     internal Animator anim;
 
     internal LaunchHandler launchHandler;
@@ -24,6 +24,7 @@ public class RocketControls : MonoBehaviour
         maxFuel = GlobalData.MaxFuel;
         Fuel =  maxFuel;
         launchHandler = GameObject.Find("Game Handler").GetComponent<LaunchHandler>();
+
         anim = GameObject.Find("RocketSprite").GetComponent<Animator>();
     }
 
