@@ -63,7 +63,6 @@ public class PanelUpdater : MonoBehaviour
         }
         else if (amount >= 1000000)
         {
-
             textField.text = (Mathf.Round(amount * 10 / 1000000) / 10) + "M"; // if amount is in the millions, abbreviate with M
         }
     }

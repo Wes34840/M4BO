@@ -21,7 +21,7 @@ public class ShowMoneyInShop : MonoBehaviour
 
         if (GlobalData.Money >= 1000)
         {
-            TextField.text = (Mathf.Round(GlobalData.Money / 1000 * 10) /10) + "K";
+            TextField.text = (Mathf.Round(GlobalData.Money / 1000 * 10) / 10) + "K";
         }
         else if (GlobalData.Money >= 1000000)
         {
