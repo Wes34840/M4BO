@@ -13,6 +13,8 @@ public class RocketControls : MonoBehaviour
     internal float Fuel;
     Rigidbody2D rb;
 
+    internal Animator anim;
+
     internal LaunchHandler launchHandler;
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class RocketControls : MonoBehaviour
         maxFuel = GlobalData.MaxFuel;
         Fuel =  maxFuel;
         launchHandler = GameObject.Find("Game Handler").GetComponent<LaunchHandler>();
+        anim = GameObject.Find("RocketSprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,10 @@ public class RocketControls : MonoBehaviour
             if (Fuel > 0 && DirY > 0)
             {
                 Thrust();
+            }
+            else
+            {
+                anim.SetBool("hasThrust", false);
             }
             rb.rotation -= (DirX / 2f);
         }
@@ -51,5 +58,6 @@ public class RocketControls : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, GlobalData.MaxSpeed);
         }
         Fuel -= 0.1f;
+        anim.SetBool("hasThrust", true);
     }
 }
