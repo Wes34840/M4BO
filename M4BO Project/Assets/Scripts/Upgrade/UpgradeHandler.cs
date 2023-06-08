@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -18,7 +19,8 @@ public class UpgradeHandler : MonoBehaviour
 
     public void UpgradeStat(string buttonArgument)
     {
-        Stat stat = FindStatInList(buttonArgument);
+        Stat[] statArray = GlobalData.RocketStats.Where(i => i.StatName == buttonArgument).ToArray(); // finds stat in RocketStats that has the same name as the buttonargument
+        Stat stat = statArray[0];
         if (GlobalData.Money >= stat.StatUpgradeCost)
         {
             GlobalData.Money -= stat.StatUpgradeCost;
@@ -27,17 +29,6 @@ public class UpgradeHandler : MonoBehaviour
         int textFieldIndex = FindPanelTextFields(buttonArgument);
         UpdateUpgradePanel(stat, textFieldIndex);
 
-    }
-    private Stat FindStatInList(string buttonArgument)
-    {
-        foreach (Stat stat in GlobalData.RocketStats)
-        {
-            if (stat.StatName == buttonArgument)
-            {
-                return stat;
-            }
-        }
-        return null;
     }
     private void ApplyUpgrade(Stat stat)
     {
