@@ -3943,6 +3943,9 @@ MonoBehaviour:
   - {fileID: 5825538613748110645, guid: eb69acc7b5a3e5843b10c9c54bc6659f, type: 3}
   - {fileID: 5825538613748110645, guid: e907ef85fb3836049bbf1aa463842a48, type: 3}
   - {fileID: 5825538613748110645, guid: 221a645ac79b9bb49bd3f7303b55e9b5, type: 3}
+  crates:
+  - {fileID: 8339641480794412579, guid: aecdfb59da2f0084291829310710322d, type: 3}
+  - {fileID: 8339641480794412579, guid: 76ffeff17c98d1347903d2db3a566dd6, type: 3}
 --- !u!1 &1980199922
 GameObject:
   m_ObjectHideFlags: 0

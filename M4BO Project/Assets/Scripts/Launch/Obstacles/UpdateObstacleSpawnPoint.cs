@@ -15,6 +15,6 @@ public class UpdateObstacleSpawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(target.position.x, target.position.y + 10);
+        transform.position = new Vector2(target.position.x, target.position.y + 15);
     }
 }

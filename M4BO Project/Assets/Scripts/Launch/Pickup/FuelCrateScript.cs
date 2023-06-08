@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrateScript : MonoBehaviour
+public class FuelCrateScript : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LaunchData.CratesPickedUp++;
-        Debug.Log("Crate picked up.");
-        Destroy(gameObject);
+        collision.gameObject.GetComponent<RocketControls>().Fuel += 50;
     }
 }

@@ -14,7 +14,7 @@ public class DespawnObstacle : MonoBehaviour
 
     private void Update()
     {
-        if (rocket.position.y >= transform.position.y + 5)
+        if (rocket.position.y >= transform.position.y + 10)
         {
             Destroy(gameObject, 0.5f);
         }
