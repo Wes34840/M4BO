@@ -2,17 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class ObstacleHandler : MonoBehaviour
 {
 
-    private Transform spawnPoint;
-    private Transform rocket;
-    private Vector3 rocketPosOnLastObstSpawn, rocketPostOnLastCrateSpawn;
+    private Transform spawnPoint, rocket;
+    public Vector3 rocketPosOnLastObstSpawn = new Vector3 (0, 25, 0);
+    public Vector3 rocketPostOnLastCrateSpawn = new Vector3(0,55,0);
+    private Slider Indicator;
+    private bool ObstacleCooldown, CrateCooldown;
 
-    [SerializeField] private GameObject[] lowAltitudeObst, mediumAltitudeObst, highAltitudeObst;
-    [SerializeField] private GameObject[] crates;
+    [SerializeField] private GameObject[] lowAltitudeObst, mediumAltitudeObst, highAltitudeObst, crates;
 
     List<GameObject[]> ObstacleList = new List<GameObject[]>();
 
@@ -21,27 +23,36 @@ public class ObstacleHandler : MonoBehaviour
     {
         rocket = GameObject.Find("Rocket").GetComponent<Transform>();
         spawnPoint = GameObject.Find("ObstacleSpawnPoint").GetComponent<Transform>();
+        Indicator = GameObject.Find("HeightIndicator").GetComponent<Slider>();
         ObstacleList.Add(lowAltitudeObst);
         ObstacleList.Add(mediumAltitudeObst);
         ObstacleList.Add(highAltitudeObst);
+        StartCoroutine(WaitForObstacleCooldown());
+        StartCoroutine(WaitForCrateCooldown());
     }
 
     void Update()
     {
-        if (rocket.position.y >= rocketPosOnLastObstSpawn.y + 15)
+        if (rocket.position.y >= rocketPosOnLastObstSpawn.y && !ObstacleCooldown)
         {
             SpawnObstacle();
+            Debug.Log("Spanwed obstacle");
+            ObstacleCooldown = true; 
+            StartCoroutine(WaitForObstacleCooldown());
         }
-        else if (rocket.position.y >= rocketPostOnLastCrateSpawn.y + 50)
+        else if (rocket.position.y >= rocketPostOnLastCrateSpawn.y && !CrateCooldown)
         {
             SpawnCrate();
+            Debug.Log("Spawned crate");
+            CrateCooldown = true;
+            StartCoroutine(WaitForCrateCooldown());
         }
     }
 
     internal void SpawnObstacle()
     {
         int altitude = ReturnHeightSet();
-        rocketPosOnLastObstSpawn = rocket.position;
+        rocketPosOnLastObstSpawn.y = rocket.position.y + 10;
         float offset = Random.Range(-7.0f, 7.0f);
         int obstacle = Random.Range(0, ObstacleList[altitude].Length);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
@@ -65,11 +76,11 @@ public class ObstacleHandler : MonoBehaviour
 
     private string CheckRocketAltitude()
     {
-        if (rocket.position.y <= 2000)
+        if (Indicator.value <= GlobalData.EndHeight / 5)
         {
             return "Low";
         }
-        else if (rocket.position.y <= 5000)
+        else if (Indicator.value <= GlobalData.EndHeight / 2)
         {
             return "Medium";
         }
@@ -77,5 +88,15 @@ public class ObstacleHandler : MonoBehaviour
         {
             return "High";
         }
+    }
+    private IEnumerator WaitForObstacleCooldown()
+    {
+        yield return new WaitForSeconds(2);
+        ObstacleCooldown = false;
+    }
+    private IEnumerator WaitForCrateCooldown()
+    {
+        yield return new WaitForSeconds(5);
+        CrateCooldown = false;
     }
 }

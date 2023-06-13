@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 852754211}
   m_Layer: 0
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3931,6 +3931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada28a8fcd98107439c4bef24c012a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketPosOnLastObstSpawn: {x: 0, y: 25, z: 0}
+  rocketPostOnLastCrateSpawn: {x: 0, y: 55, z: 0}
   lowAltitudeObst:
   - {fileID: 5825538613748110645, guid: f17f9ff357a7944469b4e73f4600bae2, type: 3}
   - {fileID: 5825538613748110645, guid: f5576bd0b6cbd11448de92310d06dd6b, type: 3}

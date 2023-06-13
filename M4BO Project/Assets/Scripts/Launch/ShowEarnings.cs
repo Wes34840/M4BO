@@ -28,7 +28,7 @@ public class ShowEarnings : MonoBehaviour
 
     private void UpdateValues()
     {
-        heightEarnings = Mathf.Round(LaunchData.HeightReached * 20);
+        heightEarnings = LaunchData.HeightReached;
         timeEarnings = Mathf.Round(LaunchData.FlightTime * 5);
         pickupEarnings = LaunchData.CratesPickedUp * 500;
         totalEarnings = heightEarnings + timeEarnings + pickupEarnings;

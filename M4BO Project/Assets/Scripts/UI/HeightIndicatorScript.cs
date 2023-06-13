@@ -12,7 +12,6 @@ public class HeightIndicatorScript : MonoBehaviour
     TMP_Text textIndicator;
     CameraScript cam;
 
-    // Start is called before the first frame update
     void Start()
     {
         Indicator = GetComponent<Slider>();
@@ -22,12 +21,12 @@ public class HeightIndicatorScript : MonoBehaviour
         Indicator.maxValue = GlobalData.EndHeight;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (cam.rocketIsMovingUp == true)
         {
-            Indicator.value = Rocket.position.y;
+            Indicator.value = Mathf.Round((Rocket.position.y * 10) - 11);
+            LaunchData.HeightReached = Indicator.value;
         }
         textIndicator.text = "" + Mathf.Round((Rocket.position.y * 10) - 11);
     }

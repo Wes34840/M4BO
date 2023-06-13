@@ -43,7 +43,7 @@ public class RocketControls : MonoBehaviour
             {
                 anim.SetBool("hasThrust", false);
             }
-            rb.rotation -= (DirX / 2f);
+            rb.rotation -= (DirX / 2f) * (GlobalData.RotationSpeed / 10);
         }
 
     }
