@@ -57,7 +57,7 @@ public class PanelUpdater : MonoBehaviour
     {
         textField.text = amount.ToString(); // if amount is under 1000, display normally
 
-        if (amount >= 1000)
+        if (amount >= 1000 && amount < 1000000)
         {
             textField.text = (Mathf.Round(amount * 10 / 1000 ) /10) + "K"; // if amount is in the thousands, abbreviate with K
         }
