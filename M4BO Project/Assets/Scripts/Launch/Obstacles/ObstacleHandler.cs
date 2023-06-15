@@ -36,14 +36,12 @@ public class ObstacleHandler : MonoBehaviour
         if (rocket.position.y >= rocketPosOnLastObstSpawn.y && !ObstacleCooldown)
         {
             SpawnObstacle();
-            Debug.Log("Spanwed obstacle");
             ObstacleCooldown = true; 
             StartCoroutine(WaitForObstacleCooldown());
         }
         else if (rocket.position.y >= rocketPostOnLastCrateSpawn.y && !CrateCooldown)
         {
             SpawnCrate();
-            Debug.Log("Spawned crate");
             CrateCooldown = true;
             StartCoroutine(WaitForCrateCooldown());
         }

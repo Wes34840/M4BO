@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3677344153576984575}
   - component: {fileID: 9220893366245667400}
   - component: {fileID: 8161647504528271817}
-  - component: {fileID: 378566818224022700}
   - component: {fileID: 4951175504290102203}
+  - component: {fileID: 378566818224022700}
   m_Layer: 0
   m_Name: Flaming Meteor
   m_TagString: Untagged
@@ -107,18 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &378566818224022700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2295365325852020313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a47e1dc191416a408103feb55864719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!68 &4951175504290102203
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +139,15 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &378566818224022700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295365325852020313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a47e1dc191416a408103feb55864719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
