@@ -36,13 +36,14 @@ public class ShowEarnings : MonoBehaviour
 
     private void UpdateUI()
     {
-        heightEarningsTextField.text = "Height: " + heightEarnings;
-        timeEarningsTextField.text = "Time; " + timeEarnings;
-        pickupEarningsTextField.text = "Pickups: " + pickupEarnings;
-        totalEarningsTextField.text = "Total Earned: " + totalEarnings;
-        totalMoneyTextField.text = "Money: " + GlobalData.Money;
+        heightEarningsTextField.text = $"Height: \n${heightEarnings}";
+        timeEarningsTextField.text = $"Time: \n${timeEarnings}";
+        pickupEarningsTextField.text = $"Pickups: \n${pickupEarnings}";
+        totalEarningsTextField.text = $"Total: \n${totalEarnings}";
+        totalMoneyTextField.text = $"Money: \n${GlobalData.Money}";
     }
-    
+
+
     internal void AwardMoney()
     {
         UpdateValues();

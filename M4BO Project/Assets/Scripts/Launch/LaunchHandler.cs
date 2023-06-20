@@ -55,7 +55,6 @@ public class LaunchHandler : MonoBehaviour
 
     public void EndLaunch()
     {
-        gameUI.SetActive(false);
         LaunchData.HeightReached = heightSlider.value;
         earningsUI.SetActive(true);
         GameActive = false;

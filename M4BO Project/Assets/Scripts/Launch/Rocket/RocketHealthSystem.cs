@@ -7,6 +7,7 @@ public class RocketHealthSystem : MonoBehaviour
     internal float rocketHealth;
     private bool isDead = false;
     private LaunchHandler launchHandler;
+    [SerializeField] private GameObject crashDebrisSprite;
 
     private void Start()
     {
@@ -19,6 +20,8 @@ public class RocketHealthSystem : MonoBehaviour
         {
             isDead = true;
             launchHandler.EndLaunch();
+            GameObject rocketDebris = Instantiate(crashDebrisSprite, transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180)));
+            rocketDebris.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
             Destroy(gameObject);
         }
     }

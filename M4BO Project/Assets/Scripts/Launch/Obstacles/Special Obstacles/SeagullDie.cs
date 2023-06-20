@@ -19,13 +19,13 @@ public class SeagullDie : MonoBehaviour
     {
         if (rocket.position.y >= transform.position.y + 10)
         {
-            Destroy(transform.parent, 0.5f);
+            Destroy(transform.parent.gameObject, 0.5f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         anim.SetBool("IsDead", true);
         rb.gravityScale = 0.5f;
-        Destroy(transform.parent, 3f);
+        Destroy(transform.parent.gameObject, 3f);
     }
 }
