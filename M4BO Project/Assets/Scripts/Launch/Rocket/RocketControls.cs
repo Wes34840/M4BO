@@ -50,8 +50,6 @@ public class RocketControls : MonoBehaviour
 
     private void Thrust()
     {
-        Debug.Log(GlobalData.MaxSpeed);
-
         rb.AddForce(DirY * GlobalData.Thrust * transform.up);
 
         if (rb.velocity.y >= GlobalData.MaxSpeed)

@@ -22,8 +22,11 @@ public class DespawnObstacle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.gravityScale = 0.5f;
-        Destroy(gameObject, 3f);
+        if (collision.collider.CompareTag("Player"))
+        {
+            rb.gravityScale = 0.5f;
+            Destroy(gameObject, 3f);
+        }
     }
 
 }

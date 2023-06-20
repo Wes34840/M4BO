@@ -52,9 +52,11 @@ public class ObstacleHandler : MonoBehaviour
         int altitude = ReturnHeightSet();
         rocketPosOnLastObstSpawn.y = rocket.position.y + 10;
         float offset = Random.Range(-7.0f, 7.0f);
-        int obstacle = Random.Range(0, ObstacleList[altitude].Length);
+        int obstacleInList = Random.Range(0, ObstacleList[altitude].Length);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
-        Instantiate(ObstacleList[altitude][obstacle], point, Quaternion.identity);
+        GameObject obstacle = Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);
+        obstacle.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(0, 2) * 2 - 1, 0);
+        Debug.Log(obstacle.GetComponent<Rigidbody2D>().velocity);
     }
 
     internal void SpawnCrate()
@@ -89,12 +91,14 @@ public class ObstacleHandler : MonoBehaviour
     }
     private IEnumerator WaitForObstacleCooldown()
     {
-        yield return new WaitForSeconds(2);
+        Debug.Log("Waiting for Cooldown");
+        yield return new WaitForSeconds(3);
+        Debug.Log("Ended Cooldown");
         ObstacleCooldown = false;
     }
     private IEnumerator WaitForCrateCooldown()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         CrateCooldown = false;
     }
 }
