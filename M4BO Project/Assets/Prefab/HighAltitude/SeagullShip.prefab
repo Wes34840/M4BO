@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1762012859382144491
+--- !u!1 &4877093137143663742
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2776544133585067739}
-  - component: {fileID: 5086343795752322119}
-  - component: {fileID: 3141780448991262082}
-  - component: {fileID: 6634850906859419654}
-  - component: {fileID: 6066729349710658834}
-  - component: {fileID: 2084930588557670977}
+  - component: {fileID: 3855468343191801190}
+  - component: {fileID: 6520920838599279545}
+  - component: {fileID: 3393700651012402554}
+  - component: {fileID: 6665236102966429206}
+  - component: {fileID: 2079342178097909933}
+  - component: {fileID: 4746458243058784216}
   m_Layer: 0
-  m_Name: Hot Air balloon Obstacle SPRITE_0
+  m_Name: SeagullShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2776544133585067739
+--- !u!4 &3855468343191801190
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762012859382144491}
+  m_GameObject: {fileID: 4877093137143663742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7262144, y: 9.742754, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: -63.4, y: 34.1, z: 54.552193}
+  m_LocalScale: {x: 23.991753, y: 23.991753, z: 23.991753}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5086343795752322119
+--- !u!212 &6520920838599279545
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762012859382144491}
+  m_GameObject: {fileID: 4877093137143663742}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,24 +77,45 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -386125981, guid: 3f4acf540fd4d104a865d84b874ff9ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47507279f4f656b4e9f172e7485cc33a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.43}
+  m_Size: {x: 0.34, y: 0.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3141780448991262082
+--- !u!50 &3393700651012402554
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4877093137143663742}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 50
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &6665236102966429206
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762012859382144491}
+  m_GameObject: {fileID: 4877093137143663742}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -105,64 +126,43 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.31, y: 0.43}
-    newSize: {x: 0.31, y: 0.43}
+    oldSize: {x: 0.34, y: 0.58}
+    newSize: {x: 0.34, y: 0.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.037440058, y: 0.2046392}
-      - {x: -0.1538488, y: 0.12938166}
-      - {x: -0.15730241, y: 0.045085408}
-      - {x: -0.07579042, y: -0.084914565}
-      - {x: -0.046939798, y: -0.21674863}
-      - {x: 0.055429615, y: -0.2161512}
-      - {x: 0.07786973, y: -0.08377994}
-      - {x: 0.15629439, y: 0.04181562}
-      - {x: 0.155, y: 0.13003442}
-      - {x: 0.038591284, y: 0.20463923}
---- !u!50 &6634850906859419654
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762012859382144491}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &6066729349710658834
+    - - {x: 0.12528315, y: 0.22916564}
+      - {x: 0.012916235, y: 0.2947202}
+      - {x: -0.0906598, y: 0.24916321}
+      - {x: -0.15092656, y: 0.13584292}
+      - {x: -0.10792044, y: -0.016219147}
+      - {x: -0.13514167, y: -0.2740748}
+      - {x: 0.14291693, y: -0.2908407}
+      - {x: 0.13140106, y: -0.28903812}
+      - {x: 0.098317325, y: -0.0060097347}
+      - {x: 0.14186673, y: 0.06800914}
+--- !u!114 &2079342178097909933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762012859382144491}
+  m_GameObject: {fileID: 4877093137143663742}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 783b428980dfc5344ac5bacf5f3a6421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2084930588557670977
+--- !u!114 &4746458243058784216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762012859382144491}
+  m_GameObject: {fileID: 4877093137143663742}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57156452611003846a571f2654da0cab, type: 3}

@@ -56,10 +56,8 @@ public class LaunchHandler : MonoBehaviour
     public void EndLaunch()
     {
         LaunchData.HeightReached = heightSlider.value;
-        earningsUI.SetActive(true);
         GameActive = false;
-        Debug.Log("Awarded money");
-        earningsScript.AwardMoney();
+        StartCoroutine(EndGameBuffer());
     }
 
     public void FinishGame()
@@ -67,6 +65,14 @@ public class LaunchHandler : MonoBehaviour
         EndLaunch();
         SceneHandler sceneHandler = GetComponent<SceneHandler>();
         sceneHandler.GoToScene("The End");
+    }
+
+    public IEnumerator EndGameBuffer()
+    {
+        yield return new WaitForSeconds(2);
+        earningsUI.SetActive(true);
+        Debug.Log("Awarded money");
+        earningsScript.AwardMoney();
     }
 
 }
