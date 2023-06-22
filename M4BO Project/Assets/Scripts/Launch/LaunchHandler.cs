@@ -31,7 +31,7 @@ public class LaunchHandler : MonoBehaviour
     
     void Update()
     {
-        if (Rocket.transform.position.y <= (GameObject.Find("Ground").transform.position.y + 5))
+        if (Rocket.transform.position.y <= (GameObject.Find("LaunchPad").transform.position.y + 5))
         {
             return;
         }

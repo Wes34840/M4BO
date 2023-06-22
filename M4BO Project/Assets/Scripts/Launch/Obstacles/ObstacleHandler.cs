@@ -33,13 +33,13 @@ public class ObstacleHandler : MonoBehaviour
 
     void Update()
     {
-        if (rocket.position.y >= rocketPosOnLastObstSpawn.y && !ObstacleCooldown)
+        if (rocket.position.y >= rocketPosOnLastObstSpawn.y + 10&& !ObstacleCooldown)
         {
             SpawnObstacle();
             ObstacleCooldown = true; 
             StartCoroutine(WaitForObstacleCooldown());
         }
-        else if (rocket.position.y >= rocketPostOnLastCrateSpawn.y && !CrateCooldown)
+        else if (rocket.position.y >= rocketPostOnLastCrateSpawn.y + 50 && !CrateCooldown)
         {
             SpawnCrate();
             CrateCooldown = true;
@@ -76,7 +76,7 @@ public class ObstacleHandler : MonoBehaviour
 
     private string CheckRocketAltitude()
     {
-        if (Indicator.value <= GlobalData.EndHeight / 5)
+        if (Indicator.value <= GlobalData.EndHeight /5)
         {
             return "Low";
         }

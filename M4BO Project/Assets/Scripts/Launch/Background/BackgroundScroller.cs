@@ -8,6 +8,7 @@ public class BackgroundScroller : MonoBehaviour
     internal float offsetX, offsetY;
     internal Material mat;
     internal CameraScript cam;
+    public float offsetXSpeed, offsetYSpeed;
 
     void Start()
     {
@@ -21,9 +22,10 @@ public class BackgroundScroller : MonoBehaviour
     {
         if (cam.rocketIsMovingUp == true)
         {
-            offsetX += rocket.velocity.x / 10000f;
-            offsetY += rocket.velocity.y / 10000f;
+            offsetX += rocket.velocity.x / offsetXSpeed;
+            offsetY += rocket.velocity.y / offsetYSpeed;
             mat.SetTextureOffset("_MainTex", new Vector2(offsetX, offsetY));
         }
+        // WHY THE FUCK DOES THIS ONLY WORK WITH THE CLOUDS BUT NOT THE BACKGROUND AAAAAAAAAAAAAAA
     }
 }
