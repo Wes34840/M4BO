@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public AudioSource audio;
     public void GoToScene(string sceneName)
     {
+        audio.Play();
         SceneManager.LoadScene(sceneName);
     }
 

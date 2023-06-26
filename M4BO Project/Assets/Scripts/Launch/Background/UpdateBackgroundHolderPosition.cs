@@ -19,5 +19,6 @@ public class UpdateBackgroundHolderPosition : MonoBehaviour
         {
             transform.position = new Vector3(rocket.transform.position.x, rocket.transform.position.y + 26, 1);
         }
+        transform.position = new Vector3(rocket.transform.position.x, transform.position.y, 1);
     }
 }

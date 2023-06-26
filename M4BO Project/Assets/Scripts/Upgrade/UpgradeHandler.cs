@@ -10,6 +10,7 @@ public class UpgradeHandler : MonoBehaviour
 {
 
     private PanelUpdater panelUpdater;
+    public AudioSource audio;
 
     // Fucking hell this took a while
     internal void Start()
@@ -28,7 +29,7 @@ public class UpgradeHandler : MonoBehaviour
         }
         int textFieldIndex = FindPanelTextFields(buttonArgument);
         UpdateUpgradePanel(stat, textFieldIndex);
-
+        audio.Play();
     }
     private void ApplyUpgrade(Stat stat)
     {

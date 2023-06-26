@@ -17,6 +17,8 @@ public class RocketControls : MonoBehaviour
 
     internal LaunchHandler launchHandler;
 
+    public AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +40,15 @@ public class RocketControls : MonoBehaviour
             if (Fuel > 0 && DirY > 0)
             {
                 Thrust();
+                if (!audio.isPlaying)
+                {
+                    audio.Play();
+                }
             }
             else
             {
                 anim.SetBool("hasThrust", false);
+                audio.Stop();
             }
             rb.rotation -= (DirX / 2f) * (GlobalData.RotationSpeed / 10);
         }
@@ -51,7 +58,6 @@ public class RocketControls : MonoBehaviour
     private void Thrust()
     {
         rb.AddForce(DirY * GlobalData.Thrust * transform.up);
-
         if (rb.velocity.y >= GlobalData.MaxSpeed)
         {
             rb.velocity = new Vector2(rb.velocity.x, GlobalData.MaxSpeed);
