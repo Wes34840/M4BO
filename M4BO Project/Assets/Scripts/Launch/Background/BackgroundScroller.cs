@@ -19,11 +19,11 @@ public class BackgroundScroller : MonoBehaviour
         
     void Update()
     {
+        offsetX = rocket.velocity.x / 100 * Time.deltaTime;
+        offsetY = rocket.velocity.y / 100 * Time.deltaTime;
         if (cam.rocketIsMovingUp == true)
         {
-            offsetX += rocket.velocity.x / 100 * Time.deltaTime;
-            offsetY += rocket.velocity.y / 100 * Time.deltaTime;
-            img.uvRect = new Rect(img.uvRect.position + new Vector2(offsetX, offsetY) * Time.deltaTime,  img.uvRect.size);
+            img.uvRect = new Rect(img.uvRect.position + new Vector2(offsetX, offsetY),  img.uvRect.size);
         }
         // it now works
     }
