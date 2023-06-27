@@ -55,11 +55,10 @@ public class ObstacleHandler : MonoBehaviour
         int obstacleInList = Random.Range(0, ObstacleList[altitude].Length);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
         GameObject obstacle = Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);
-        if (obstacle.GetComponent<Rigidbody>() != null)
+        if (obstacle.GetComponent<Rigidbody2D>() != null)
         {
             obstacle.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(0, 2) * 2 - 1, 0);
         }
-        Debug.Log(obstacle.GetComponent<Rigidbody2D>().velocity);
     }
 
     internal void SpawnCrate()
