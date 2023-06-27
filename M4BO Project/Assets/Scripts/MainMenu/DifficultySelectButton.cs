@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DifficultySelectButton : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource audioSource;
     public void onClick()
     {
         SceneManager.LoadScene("Upgrade");
-        audio.Play();
+        audioSource.Play();
     }
 
 

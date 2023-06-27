@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayAudio : MonoBehaviour
 {
 
-    public AudioSource audio;
+    public AudioSource audioSource;
 
     private void OnCollisionEnter(Collision collision)
     {
-        audio.Play();
+        if (collision.collider.CompareTag("Player"))
+        {
+            audioSource.Play();
+        }
     }
 }

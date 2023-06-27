@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FuelCrateScript : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource audioSource;
     public GameObject childSprite;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,7 +12,7 @@ public class FuelCrateScript : MonoBehaviour
         {
             collision.gameObject.GetComponent<RocketControls>().Fuel += 50;
             Destroy(childSprite);
-            audio.Play();
+            audioSource.Play();
             Destroy(gameObject, 5f);
         }
     }

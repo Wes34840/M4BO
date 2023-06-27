@@ -5,10 +5,10 @@ using UnityEngine;
 public class StartButtonScript : MonoBehaviour
 {
     public GameObject startMenu, difficultySelectMenu;
-    public AudioSource audio;
+    public AudioSource audioSource;
     public void onClick()
     {
-        audio.Play();
+        audioSource.Play();
         startMenu.SetActive(false);
         difficultySelectMenu.SetActive(true);
     }

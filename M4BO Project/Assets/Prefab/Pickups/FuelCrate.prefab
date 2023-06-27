@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40af0ae65a421d4994b9e87575f36dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: -2629138306274178097}
+  audioSource: {fileID: -2629138306274178097}
   childSprite: {fileID: 8365649677943527747}
 --- !u!61 &2266877246419243225
 BoxCollider2D:

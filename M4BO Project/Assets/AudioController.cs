@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
 
-    public AudioSource audio;
+    public AudioSource audioSource;
     public UpdateBackgroundSprites altitudeChecker;
     public AudioClip highAltMusic;
     bool triggeredHighAltMusic = false;
@@ -13,17 +13,17 @@ public class AudioController : MonoBehaviour
     void Update()
     {
         Debug.Log(altitudeChecker.currentStage);
-        if (altitudeChecker.currentStage == Altitudes.Medium && !audio.isPlaying)
+        if (altitudeChecker.currentStage == Altitudes.Medium && !audioSource.isPlaying)
         {
-            audio.Play();
+            audioSource.Play();
         }
         if (altitudeChecker.currentStage == Altitudes.High && !triggeredHighAltMusic)
         {
             Debug.Log("HighAlt Music");
             triggeredHighAltMusic = true;
-            audio.Stop();
-            audio.clip = highAltMusic;
-            audio.Play();
+            audioSource.Stop();
+            audioSource.clip = highAltMusic;
+            audioSource.Play();
         }
     }
 }

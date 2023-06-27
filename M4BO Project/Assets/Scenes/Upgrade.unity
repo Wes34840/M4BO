@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e410788a1d2b35b43a936c1dfecbdd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 566574126}
+  audioSource: {fileID: 566574126}
 --- !u!4 &566574122
 Transform:
   m_ObjectHideFlags: 0
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c48ab39d4cee38440825945a10b10aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 566574125}
+  audioSource: {fileID: 566574125}
 --- !u!114 &566574124
 MonoBehaviour:
   m_ObjectHideFlags: 0

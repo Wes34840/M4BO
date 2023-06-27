@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoneyCrateScript : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource audioSource;
     public GameObject childSprite;
     private void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -12,7 +12,7 @@ public class MoneyCrateScript : MonoBehaviour
         {
             LaunchData.CratesPickedUp++;
             Destroy(childSprite);
-            audio.Play();
+            audioSource.Play();
             Destroy(gameObject, 5f);
         }
     }

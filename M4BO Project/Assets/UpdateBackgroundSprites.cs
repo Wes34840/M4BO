@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UpdateBackgroundSprites : MonoBehaviour
 {
     public RawImage backgroundSprite, backgroundAddition;
-    public Texture2D lowAltBackground, lowAltBackgroundAdd, mediumAltBackground, mediumAltBackgroundAdd;//highAltBackground, highAltBackgroundAdd;
+    public Texture2D lowAltBackground, lowAltBackgroundAdd, mediumAltBackground, mediumAltBackgroundAdd, highAltBackground, highAltBackgroundAdd;
 
     public Altitudes currentStage;
 
@@ -28,7 +28,7 @@ public class UpdateBackgroundSprites : MonoBehaviour
         if (LaunchData.HeightReached >= (GlobalData.EndHeight / 2) && currentStage != Altitudes.High)
         {
             currentStage = Altitudes.High;
-            //ChangeBackground(highAltBackground, highAltBackgroundAdd);
+            ChangeBackground(highAltBackground, highAltBackgroundAdd);
         }
     }
 

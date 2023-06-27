@@ -9,7 +9,7 @@ public class SeagullDie : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
     Transform rocket;
-    public AudioSource audio;
+    public AudioSource audioSource;
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -27,7 +27,8 @@ public class SeagullDie : MonoBehaviour
     {
         anim.SetBool("IsDead", true);
         rb.gravityScale = 0.5f;
-        audio.Play();
+        audioSource.Play();
+        Debug.Log("Played Audio");
         Destroy(transform.parent.gameObject, 3f);
     }
 }
