@@ -36,12 +36,10 @@ public class MeteorFalling : MonoBehaviour
         {
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
             rb.velocity -= rb.velocity / 4; //lose a quarter of your speed
-            collision.transform.GetComponent<RocketHealthSystem>().rocketHealth -= 5;
+            RocketHealthSystem rocket = collision.transform.GetComponent<RocketHealthSystem>();
+            rocket.rocketHealth -= 10;
+            StartCoroutine(rocket.TriggerHurtAnimation());
             Destroy(gameObject, 0.5f);
-        }
-        else
-        {
-            return;
         }
 
     }

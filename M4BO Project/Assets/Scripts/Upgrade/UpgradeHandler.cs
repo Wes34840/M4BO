@@ -41,7 +41,7 @@ public class UpgradeHandler : MonoBehaviour
         GlobalData.Thrust = 8 + ((GlobalData.RocketStats[1].StatLevel-1) * GlobalData.RocketStats[1].StatMagnitude);
         GlobalData.MaxSpeed = 5 + ((GlobalData.RocketStats[2].StatLevel - 1) * GlobalData.RocketStats[2].StatMagnitude);
         GlobalData.MaxHealth = 5 + ((GlobalData.RocketStats[3].StatLevel - 1) * GlobalData.RocketStats[3].StatMagnitude);
-        GlobalData.RotationSpeed = 5 + ((GlobalData.RocketStats[4].StatLevel - 1) * GlobalData.RocketStats[4].StatMagnitude);
+        GlobalData.HorizontalSpeed = 5 + ((GlobalData.RocketStats[4].StatLevel - 1) * GlobalData.RocketStats[4].StatMagnitude);
 
     }
 

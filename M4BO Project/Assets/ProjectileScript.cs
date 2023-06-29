@@ -7,6 +7,7 @@ public class ProjectileScript : MonoBehaviour
     bool hasHit;
     internal Vector3 direction;
     float speed = 5;
+    [SerializeField] float damage;
     Animator anim;
     void Start()
     {
@@ -29,7 +30,7 @@ public class ProjectileScript : MonoBehaviour
         {
             hasHit = true;
             anim.SetBool("hasHit", true);
-            collision.GetComponent<RocketHealthSystem>().rocketHealth -= 5;
+            collision.GetComponent<RocketHealthSystem>().rocketHealth -= damage;
         }
         else
         {

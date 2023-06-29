@@ -50,10 +50,14 @@ public class RocketControls : MonoBehaviour
                 anim.SetBool("hasThrust", false);
                 audioSource.Stop();
             }
-            rb.AddForce(DirX * GlobalData.RotationSpeed * transform.right);
+            rb.AddForce(DirX * GlobalData.HorizontalSpeed * transform.right);
             if (rb.velocity.x > 5)
             {
                 rb.velocity = new Vector2(5, rb.velocity.y);
+            }
+            else if (rb.velocity.x < -5)
+            {
+                rb.velocity = new Vector2(-5, rb.velocity.y);
             }
         }
 

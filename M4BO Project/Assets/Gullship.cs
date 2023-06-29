@@ -9,6 +9,7 @@ public class Gullship : MonoBehaviour
     Transform player;
     public GameObject gullLaser;
     bool fireCooldown;
+    [SerializeField] float ShipCannonCooldown;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,7 +41,7 @@ public class Gullship : MonoBehaviour
     }
     private IEnumerator WaitForCooldown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(ShipCannonCooldown);
         fireCooldown = false;
     }
 }

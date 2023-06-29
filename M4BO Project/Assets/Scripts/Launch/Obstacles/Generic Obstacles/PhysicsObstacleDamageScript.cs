@@ -5,12 +5,15 @@ using UnityEngine;
 public class PhysicsObstacleDamageScript : MonoBehaviour
 {
     private bool hasDealtDamage = false;
+    public int damage;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!hasDealtDamage && collision.collider.CompareTag("Player"))
         {
-            collision.transform.GetComponent<RocketHealthSystem>().rocketHealth -= 1;
+            RocketHealthSystem rocket = collision.transform.GetComponent<RocketHealthSystem>();
+            rocket.rocketHealth -= damage;
+            StartCoroutine(rocket.TriggerHurtAnimation());
             hasDealtDamage = true;
         }
         else

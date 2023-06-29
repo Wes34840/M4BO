@@ -8,6 +8,7 @@ public class RocketHealthSystem : MonoBehaviour
     private bool isDead = false;
     private LaunchHandler launchHandler;
     [SerializeField] private GameObject crashDebrisSprite;
+    [SerializeField] internal Animator animator;
 
     private void Start()
     {
@@ -24,5 +25,12 @@ public class RocketHealthSystem : MonoBehaviour
             rocketDebris.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
             Destroy(gameObject);
         }
+    }
+    internal IEnumerator TriggerHurtAnimation()
+    {
+        Debug.Log("Triggered");
+        animator.SetBool("hasTakenDamage", true);
+        yield return new WaitForSeconds(1);
+        animator.SetBool("hasTakenDamage", false);
     }
 }
