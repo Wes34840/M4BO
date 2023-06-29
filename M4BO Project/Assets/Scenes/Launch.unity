@@ -239,15 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca9894388a51734dac49f6270013cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSprite: {fileID: 1393342228}
-  backgroundAddition: {fileID: 1701225663}
-  lowAltBackground: {fileID: 2800000, guid: bde842705a5c0c143b7d4a5c29b761e3, type: 3}
-  lowAltBackgroundAdd: {fileID: 2800000, guid: a48e6b8a0dd818a4786a8f176dc45150, type: 3}
-  mediumAltBackground: {fileID: 2800000, guid: afad28606b2d0484794636e24b40d97c, type: 3}
-  mediumAltBackgroundAdd: {fileID: 2800000, guid: 0d495c25e0759c24eb3c01155d0dabe1, type: 3}
-  highAltBackground: {fileID: 2800000, guid: f49e55dc71e332f449206664a19c04df, type: 3}
-  highAltBackgroundAdd: {fileID: 2800000, guid: e11cf003d0a75524491e7987526264af, type: 3}
   currentStage: 0
+  animBackground: {fileID: 1393342233}
+  animAdd: {fileID: 1701225666}
 --- !u!114 &7951002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +935,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1412344170, guid: 97c81a83a06d0b94ab582d761570107e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8df47ac14d1cd434c8a25a3203371965, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -962,7 +956,7 @@ Animator:
   m_GameObject: {fileID: 243584406}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2799cd4a7cff5624799acd3ea9c80f14, type: 2}
+  m_Controller: {fileID: 9100000, guid: c02fdb7cf126caf498dc01d7a5abdea6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1487,7 +1481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2229.0898, z: -331600.7}
+  m_LocalPosition: {x: 0, y: -2229.0898, z: -417300.7}
   m_LocalScale: {x: 1.4, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1622,7 +1616,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9de0bf821dfe81840840f80a36a45023, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bf714248e126ddd4ea7c6ae8d8517376, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.479
   m_Pitch: 1
@@ -2734,7 +2728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1021743011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,7 +2775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021743010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2229.0898, z: -331600.7}
+  m_LocalPosition: {x: 0, y: -2229.0898, z: -417300.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2892,7 +2886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027848538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.240005, y: -6.3, z: -1}
+  m_LocalPosition: {x: 87.24, y: -6.8, z: -1}
   m_LocalScale: {x: 157.43216, y: 15.127238, z: 1.6761569}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3682,6 +3676,9 @@ GameObject:
   - component: {fileID: 1393342229}
   - component: {fileID: 1393342228}
   - component: {fileID: 1393342230}
+  - component: {fileID: 1393342233}
+  - component: {fileID: 1393342232}
+  - component: {fileID: 1393342231}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -3761,6 +3758,53 @@ MonoBehaviour:
   img: {fileID: 1393342228}
   offsetXSpeed: 0
   offsetYSpeed: 0
+--- !u!114 &1393342231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393342226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8523cce63aa4734ba96c1d784248fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 1393342228}
+  mediumAltBackground: {fileID: 2800000, guid: afad28606b2d0484794636e24b40d97c, type: 3}
+  highAltBackground: {fileID: 2800000, guid: f49e55dc71e332f449206664a19c04df, type: 3}
+--- !u!225 &1393342232
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393342226}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1393342233
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393342226}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f037d1115002b24caea8f8897081d54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1443119630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4509,6 +4553,9 @@ GameObject:
   - component: {fileID: 1701225664}
   - component: {fileID: 1701225663}
   - component: {fileID: 1701225665}
+  - component: {fileID: 1701225666}
+  - component: {fileID: 1701225668}
+  - component: {fileID: 1701225667}
   m_Layer: 5
   m_Name: BackgroundAddition
   m_TagString: Untagged
@@ -4588,6 +4635,53 @@ MonoBehaviour:
   img: {fileID: 1701225663}
   offsetXSpeed: 0
   offsetYSpeed: 0
+--- !u!95 &1701225666
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701225661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1897c1c514eef314cb307da9e7f826bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1701225667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701225661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e7fca4da5fa4149bde3ba506009281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  additionImage: {fileID: 1701225663}
+  mediumAltAddition: {fileID: 2800000, guid: 0d495c25e0759c24eb3c01155d0dabe1, type: 3}
+  highAltAddition: {fileID: 2800000, guid: e11cf003d0a75524491e7987526264af, type: 3}
+--- !u!225 &1701225668
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701225661}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1781284117
 GameObject:
   m_ObjectHideFlags: 0

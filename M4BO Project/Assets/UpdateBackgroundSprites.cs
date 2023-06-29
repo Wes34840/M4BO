@@ -5,36 +5,28 @@ using UnityEngine.UI;
 
 public class UpdateBackgroundSprites : MonoBehaviour
 {
-    public RawImage backgroundSprite, backgroundAddition;
-    public Texture2D lowAltBackground, lowAltBackgroundAdd, mediumAltBackground, mediumAltBackgroundAdd, highAltBackground, highAltBackgroundAdd;
-
     public Altitudes currentStage;
-
+    public Animator animBackground, animAdd;
     void Start()
     {
         currentStage = Altitudes.Low;
-        backgroundSprite.texture = lowAltBackground;
-        backgroundAddition.texture = lowAltBackgroundAdd;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 5) && currentStage != Altitudes.Medium)
+        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 5) && currentStage != Altitudes.Medium || Input.GetKeyDown(KeyCode.K))
         {
             currentStage = Altitudes.Medium;
-            ChangeBackground(mediumAltBackground, mediumAltBackgroundAdd);
+            animBackground.SetBool("GoToMedium", true);
+            animAdd.SetBool("GoToMedium", true);
         }
-        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 2) && currentStage != Altitudes.High)
+        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 2) && currentStage != Altitudes.High || Input.GetKeyDown(KeyCode.P))
         {
             currentStage = Altitudes.High;
-            ChangeBackground(highAltBackground, highAltBackgroundAdd);
+            animBackground.SetBool("GoToHigh", true);
+            animAdd.SetBool("GoToHigh", true);
         }
     }
 
-    void ChangeBackground(Texture2D background, Texture2D backgroundAdd)
-    { 
-        backgroundSprite.texture = background;
-        backgroundAddition.texture = backgroundAdd;
-    }
 }

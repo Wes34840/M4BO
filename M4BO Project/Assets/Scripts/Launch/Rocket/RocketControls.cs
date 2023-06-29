@@ -51,13 +51,13 @@ public class RocketControls : MonoBehaviour
                 audioSource.Stop();
             }
             rb.AddForce(DirX * GlobalData.HorizontalSpeed * transform.right);
-            if (rb.velocity.x > 5)
+            if (rb.velocity.x > 7)
             {
-                rb.velocity = new Vector2(5, rb.velocity.y);
+                rb.velocity = new Vector2(7, rb.velocity.y);
             }
-            else if (rb.velocity.x < -5)
+            else if (rb.velocity.x < -7)
             {
-                rb.velocity = new Vector2(-5, rb.velocity.y);
+                rb.velocity = new Vector2(-7, rb.velocity.y);
             }
         }
 
