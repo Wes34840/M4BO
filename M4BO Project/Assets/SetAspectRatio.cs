@@ -6,6 +6,6 @@ public class SetAspectRatio : MonoBehaviour
 {
     void Start()
     {
-        Screen.SetResolution(607, 1080, FullScreenMode.MaximizedWindow);
+        Screen.SetResolution((Screen.height / 16 * 9), Screen.height, FullScreenMode.MaximizedWindow);
     }
 }

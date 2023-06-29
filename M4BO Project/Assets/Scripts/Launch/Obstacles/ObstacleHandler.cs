@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -60,7 +61,6 @@ public class ObstacleHandler : MonoBehaviour
             obstacle.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(0, 2) * 2 - 1, 0);
         }
     }
-
     internal void SpawnCrate()
     {
         rocketPostOnLastCrateSpawn = rocket.position;
@@ -103,4 +103,5 @@ public class ObstacleHandler : MonoBehaviour
         yield return new WaitForSeconds(10);
         CrateCooldown = false;
     }
+ 
 }

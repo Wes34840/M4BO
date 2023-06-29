@@ -8,10 +8,14 @@ public class PhysicsObstacleDamageScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!hasDealtDamage && collision.collider.CompareTag("Player")) 
+        if (!hasDealtDamage && collision.collider.CompareTag("Player"))
         {
             collision.transform.GetComponent<RocketHealthSystem>().rocketHealth -= 1;
             hasDealtDamage = true;
+        }
+        else
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
     }
 }

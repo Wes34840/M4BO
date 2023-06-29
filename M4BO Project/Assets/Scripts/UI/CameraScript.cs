@@ -12,6 +12,7 @@ public class CameraScript : MonoBehaviour
     void Start()
     {
         Target = GameObject.Find("Rocket").GetComponent<Transform>();
+        transform.position = Target.position;
     }
 
     // Update is called once per frame

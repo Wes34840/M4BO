@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeteorFalling : MonoBehaviour
 {
-    Vector3 velocity;
+    internal Vector3 velocity;
     private Transform rocketPos;
     private SpriteRenderer sprite;
     private void Start()
@@ -13,12 +13,12 @@ public class MeteorFalling : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         if (transform.position.x <= rocketPos.position.x)
         {
-            velocity = new Vector3(2, -4, 0);
+            velocity = new Vector3(2, 4, 0);
             sprite.flipX = true;
         }
         else if (transform.position.x > rocketPos.position.x)
         {
-            velocity = new Vector3(-2, -4, 0);
+            velocity = new Vector3(-2, 4, 0);
             sprite.flipX = false;
         }
     }
@@ -36,7 +36,7 @@ public class MeteorFalling : MonoBehaviour
         {
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
             rb.velocity -= rb.velocity / 4; //lose a quarter of your speed
-            collision.transform.GetComponent<RocketHealthSystem>().rocketHealth -= 1;
+            collision.transform.GetComponent<RocketHealthSystem>().rocketHealth -= 5;
             Destroy(gameObject, 0.5f);
         }
         else
