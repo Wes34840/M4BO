@@ -1251,7 +1251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 478426595}
   - component: {fileID: 478426598}
-  - component: {fileID: 478426597}
   - component: {fileID: 478426599}
   m_Layer: 0
   m_Name: cm
@@ -1275,33 +1274,6 @@ Transform:
   m_Father: {fileID: 1021743012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &478426597
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478426594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
-  m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
-  m_BiasX: 0
-  m_BiasY: 0
-  m_CenterOnActivate: 1
 --- !u!114 &478426598
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1331,8 +1303,8 @@ MonoBehaviour:
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
-  m_YDamping: 2.3
-  m_ZDamping: 2.7
+  m_YDamping: 2.5
+  m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -1341,10 +1313,10 @@ MonoBehaviour:
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.67
-  m_SoftZoneHeight: 0.55
+  m_SoftZoneWidth: 0.68
+  m_SoftZoneHeight: 0.51
   m_BiasX: 0
-  m_BiasY: 0.36200002
+  m_BiasY: 0.5
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -1481,7 +1453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2229.0898, z: -417300.7}
+  m_LocalPosition: {x: 0, y: -1915.857, z: -476829.5}
   m_LocalScale: {x: 1.4, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2728,7 +2700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1021743011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2775,7 +2747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021743010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2229.0898, z: -417300.7}
+  m_LocalPosition: {x: 0, y: -1915.857, z: -476829.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4895,7 +4867,7 @@ MonoBehaviour:
   lowAltitudeObst:
   - {fileID: 2808149766312756689, guid: 3cbaf9098f2123544810d909936c8dcc, type: 3}
   - {fileID: 1762012859382144491, guid: aaa919681d1c5864d8db1d1cb4042420, type: 3}
-  - {fileID: 0}
+  - {fileID: 8942884895043820117, guid: e0d075a48f56e3e4da3b7a2c5b9824b9, type: 3}
   mediumAltitudeObst:
   - {fileID: 2295365325852020313, guid: c9fe0c8eaa82ed546ba5e7a765d2a01b, type: 3}
   - {fileID: 5962272806913963764, guid: 18bc7e39f5420324a9dd157c1126aacc, type: 3}
@@ -4903,7 +4875,7 @@ MonoBehaviour:
   highAltitudeObst:
   - {fileID: 4877093137143663742, guid: abc0fafd38996a246bedaa7b98eef28d, type: 3}
   - {fileID: 3609875035606213827, guid: e43e8f6b274360a41b6a95111fff5a37, type: 3}
-  - {fileID: 5825538613748110645, guid: eb69acc7b5a3e5843b10c9c54bc6659f, type: 3}
+  - {fileID: 8314519789715287003, guid: f4e2a2d33ab446c4eb2ad4c40c70732c, type: 3}
   crates:
   - {fileID: 8339641480794412579, guid: aecdfb59da2f0084291829310710322d, type: 3}
   - {fileID: 8339641480794412579, guid: 76ffeff17c98d1347903d2db3a566dd6, type: 3}

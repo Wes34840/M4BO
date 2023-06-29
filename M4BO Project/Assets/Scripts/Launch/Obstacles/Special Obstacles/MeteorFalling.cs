@@ -5,20 +5,20 @@ using UnityEngine;
 public class MeteorFalling : MonoBehaviour
 {
     internal Vector3 velocity;
-    private Transform rocketPos;
+    private GameObject rocket;
     private SpriteRenderer sprite;
     private void Start()
     {
-        rocketPos = GameObject.Find("Rocket").GetComponent<Transform>();
+        rocket = GameObject.Find("Rocket");
         sprite = GetComponent<SpriteRenderer>();
-        if (transform.position.x <= rocketPos.position.x)
+        if (transform.position.x <= rocket.transform.position.x)
         {
-            velocity = new Vector3(2, 4, 0);
+            velocity = new Vector3(2, 0, 0);
             sprite.flipX = true;
         }
-        else if (transform.position.x > rocketPos.position.x)
+        else if (transform.position.x > rocket.transform.position.x)
         {
-            velocity = new Vector3(-2, 4, 0);
+            velocity = new Vector3(-2, 0, 0);
             sprite.flipX = false;
         }
     }
@@ -27,6 +27,7 @@ public class MeteorFalling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        velocity = new Vector2(velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y);
         transform.position += velocity * Time.deltaTime;
     }
 

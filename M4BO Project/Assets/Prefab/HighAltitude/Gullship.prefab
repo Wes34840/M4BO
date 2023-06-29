@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 602418608431603040}
   - component: {fileID: 6217475453798566199}
   - component: {fileID: 406104784139906351}
+  - component: {fileID: -347432487610278755}
   m_Layer: 0
   m_Name: Gullship
   m_TagString: Untagged
@@ -330,3 +331,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-347432487610278755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3609875035606213827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf94b38028b9e8a4aa67b54d0d93b3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
