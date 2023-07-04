@@ -7,7 +7,7 @@ public class PlayAudio : MonoBehaviour
 
     public AudioSource audioSource;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {

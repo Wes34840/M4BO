@@ -6,24 +6,17 @@ public class AudioController : MonoBehaviour
 {
 
     public AudioSource audioSource;
-    public UpdateBackgroundSprites altitudeChecker;
-    public AudioClip highAltMusic;
-    bool triggeredHighAltMusic = false;
-    // Update is called once per frame
-    void Update()
+    public AudioClip mediumAltMusic, highAltMusic;
+    public void LowToMedium()
     {
-        Debug.Log(altitudeChecker.currentStage);
-        if (altitudeChecker.currentStage == Altitudes.Medium && !audioSource.isPlaying)
-        {
-            audioSource.Play();
-        }
-        if (altitudeChecker.currentStage == Altitudes.High && !triggeredHighAltMusic)
-        {
-            Debug.Log("HighAlt Music");
-            triggeredHighAltMusic = true;
-            audioSource.Stop();
-            audioSource.clip = highAltMusic;
-            audioSource.Play();
-        }
+        audioSource.Stop();
+        audioSource.clip = mediumAltMusic;
+        audioSource.Play();
+    }
+    public void MediumToHigh()
+    {
+        audioSource.Stop();
+        audioSource.clip = highAltMusic;
+        audioSource.Play();
     }
 }

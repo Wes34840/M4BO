@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UpdateBackgroundSprites : MonoBehaviour
 {
     public Altitudes currentStage;
-    public Animator animBackground, animAdd;
+    public Animator animBackground, animAdd, animAudio;
     void Start()
     {
         currentStage = Altitudes.Low;
@@ -20,12 +20,14 @@ public class UpdateBackgroundSprites : MonoBehaviour
             currentStage = Altitudes.Medium;
             animBackground.SetBool("GoToMedium", true);
             animAdd.SetBool("GoToMedium", true);
+            animAudio.SetBool("reachedMedium", true);
         }
         if (LaunchData.HeightReached >= (GlobalData.EndHeight / 2) && currentStage != Altitudes.High || Input.GetKeyDown(KeyCode.P))
         {
             currentStage = Altitudes.High;
             animBackground.SetBool("GoToHigh", true);
             animAdd.SetBool("GoToHigh", true);
+            animAudio.SetBool("reachedHigh", true);
         }
     }
 

@@ -29,20 +29,23 @@ public class PanelUpdater : MonoBehaviour
             TMP_Text[] textFields = new TMP_Text[3];
             foreach (Transform panelComponent in PanelComponents)
             {
+                switch (panelComponent.name)
+                {
+                    case "Name":
+                        textFields[0] = panelComponent.GetComponent<TMP_Text>();
+                        break;
 
-                if (panelComponent.name == "Name")
-                {
-                    textFields[0] = panelComponent.GetComponent<TMP_Text>();
-                }
-                else if (panelComponent.name == "StatLevel")
-                {
-                    textFields[1] = panelComponent.GetComponent<TMP_Text>();
-                    DisplayInt(textFields[1], GlobalData.RocketStats[count].StatLevel);
-                }
-                else if (panelComponent.name == "Cost")
-                {
-                    textFields[2] = panelComponent.GetComponent<TMP_Text>();
-                    DisplayInt(textFields[2], GlobalData.RocketStats[count].StatUpgradeCost);
+                    case "StatLevel":
+                        textFields[1] = panelComponent.GetComponent<TMP_Text>();
+                        DisplayInt(textFields[1], GlobalData.RocketStats[count].StatLevel);
+                        break;
+                    case "Cost":
+                        textFields[2] = panelComponent.GetComponent<TMP_Text>();
+                        DisplayInt(textFields[2], GlobalData.RocketStats[count].StatUpgradeCost);
+                        break;
+                    default:
+                        Debug.Log("Invalid");
+                        break;
                 }
             }
 

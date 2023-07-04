@@ -18,7 +18,7 @@ public class SpeedRelativeToShip : MonoBehaviour
     {
         if (rocket.GetComponent<Rigidbody2D>().velocity.y > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y*0.8f);
+            rb.velocity = new Vector2(rb.velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y * 0.8f);
         }
     }
 }

@@ -51,14 +51,8 @@ public class RocketControls : MonoBehaviour
                 audioSource.Stop();
             }
             rb.AddForce(DirX * GlobalData.HorizontalSpeed * transform.right);
-            if (rb.velocity.x > 7)
-            {
-                rb.velocity = new Vector2(7, rb.velocity.y);
-            }
-            else if (rb.velocity.x < -7)
-            {
-                rb.velocity = new Vector2(-7, rb.velocity.y);
-            }
+            EnforceMaxHorizontalSpeed();
+            
         }
 
     }
@@ -72,5 +66,31 @@ public class RocketControls : MonoBehaviour
         }
         Fuel -= 0.1f;
         anim.SetBool("hasThrust", true);
+    }
+
+    internal void EnforceMaxHorizontalSpeed()
+    {
+        if (rb.velocity.x > 7)
+        {
+            rb.velocity = new Vector2(7, rb.velocity.y);
+        }
+        else if (rb.velocity.x < -7)
+        {
+            rb.velocity = new Vector2(-7, rb.velocity.y);
+        }
+    }
+    internal void UpdateRocketSprite()
+    {
+        if (DirX < 0)
+        {
+            anim.SetBool("IsTurningRight", false);
+            anim.SetBool("IsTurningLeft", true);
+        }
+        else if (DirX > 0)
+        {
+            anim.SetBool("IsTurningLeft", false);
+            anim.SetBool("IsTurningRight", true);
+        }
+        // this sucks, but I gotta do this fast
     }
 }
