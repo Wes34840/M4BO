@@ -24,7 +24,7 @@ public class AbortLaunchScript : MonoBehaviour
     {
         if (isPressed)
         {
-            UpdateFillAlpha(0.3f);
+            UpdateFillAlpha(0.5f);
             abortProgress.value += Time.deltaTime;
         }
 
