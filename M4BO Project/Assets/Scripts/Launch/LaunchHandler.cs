@@ -14,6 +14,7 @@ public class LaunchHandler : MonoBehaviour
     Slider heightSlider;
     public bool GameActive;
     ShowEarnings earningsScript;
+    [SerializeField] private Animator endFadeOut;
 
     void Start()
     {
@@ -62,9 +63,7 @@ public class LaunchHandler : MonoBehaviour
 
     public void FinishGame()
     {
-        EndLaunch();
-        SceneHandler sceneHandler = GetComponent<SceneHandler>();
-        sceneHandler.GoToScene("The End");
+        endFadeOut.SetBool("Finished Game", true);
     }
 
     public IEnumerator EndGameBuffer()

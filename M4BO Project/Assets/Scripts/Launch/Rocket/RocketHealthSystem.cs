@@ -27,8 +27,7 @@ public class RocketHealthSystem : MonoBehaviour
         }
     }
     internal IEnumerator TriggerHurtAnimation()
-    {
-        Debug.Log("Triggered");
+    {   
         animator.SetBool("hasTakenDamage", true);
         yield return new WaitForSeconds(0.2f);
         animator.SetBool("hasTakenDamage", false);

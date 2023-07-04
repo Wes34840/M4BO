@@ -21,13 +21,7 @@ public class MeteorFalling : MonoBehaviour
             velocity = new Vector3(-2, 0, 0);
             sprite.flipX = false;
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        velocity = new Vector2(velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y);
+        velocity = new Vector2(velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y * 0.8f);
         transform.position += velocity * Time.deltaTime;
     }
 
@@ -40,7 +34,7 @@ public class MeteorFalling : MonoBehaviour
             RocketHealthSystem rocket = collision.transform.GetComponent<RocketHealthSystem>();
             rocket.rocketHealth -= 10;
             StartCoroutine(rocket.TriggerHurtAnimation());
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject);
         }
 
     }

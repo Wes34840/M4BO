@@ -6,6 +6,7 @@ public class DespawnObstacle : MonoBehaviour
 {
     private Transform rocket;
     private Rigidbody2D rb;
+    public bool inOrbit;
     private void Start()
     {
         rocket = GameObject.Find("Rocket").GetComponent<Transform>();
@@ -24,7 +25,10 @@ public class DespawnObstacle : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            rb.gravityScale = 0.5f;
+            if (inOrbit)
+            {
+                rb.gravityScale = 0.5f;
+            }
             Destroy(gameObject, 5f);
         }
     }

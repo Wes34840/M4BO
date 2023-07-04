@@ -14,6 +14,7 @@ public class ObstacleHandler : MonoBehaviour
     public Vector3 rocketPostOnLastCrateSpawn = new Vector3(0,55,0);
     private Slider Indicator;
     private bool ObstacleCooldown, CrateCooldown;
+    [SerializeField] private UpdateBackgroundSprites altitudeHandler;
 
     [SerializeField] private GameObject[] lowAltitudeObst, mediumAltitudeObst, highAltitudeObst, crates;
 
@@ -50,52 +51,26 @@ public class ObstacleHandler : MonoBehaviour
 
     internal void SpawnObstacle()
     {
-        int altitude = ReturnHeightSet();
+        int altitude = (int)altitudeHandler.currentStage;
         rocketPosOnLastObstSpawn.y = rocket.position.y + 10;
         float offset = Random.Range(-7.0f, 7.0f);
         int obstacleInList = Random.Range(0, ObstacleList[altitude].Length);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
-        GameObject obstacle = Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);
-        if (obstacle.GetComponent<Rigidbody2D>() != null)
-        {
-            obstacle.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(0, 2) * 2 - 1, 0);
-        }
+        Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);
     }
     internal void SpawnCrate()
     {
         rocketPostOnLastCrateSpawn = rocket.position;
         float offset = Random.Range(-7.0f, 7.0f);
-        int crate = Random.Range(0, 1);
+        int crate = Random.Range(0, 2);
+        Debug.Log(crate);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
         Instantiate(crates[crate], point, Quaternion.identity);
     }
 
-    private int ReturnHeightSet()
-    {
-        string value = CheckRocketAltitude();        
-        return (int)Enum.Parse<Altitudes>(value);
-    }
-
-    private string CheckRocketAltitude()
-    {
-        if (Indicator.value <= GlobalData.EndHeight /5)
-        {
-            return "Low";
-        }
-        else if (Indicator.value <= GlobalData.EndHeight / 2)
-        {
-            return "Medium";
-        }
-        else
-        {
-            return "High";
-        }
-    }
     private IEnumerator WaitForObstacleCooldown()
     {
-        Debug.Log("Waiting for Cooldown");
         yield return new WaitForSeconds(3);
-        Debug.Log("Ended Cooldown");
         ObstacleCooldown = false;
     }
     private IEnumerator WaitForCrateCooldown()
