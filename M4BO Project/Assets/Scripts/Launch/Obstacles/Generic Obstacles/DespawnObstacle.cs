@@ -14,7 +14,7 @@ public class DespawnObstacle : MonoBehaviour
 
     private void Update()
     {
-        if (rocket.position.y >= transform.position.y + 10)
+        if (rocket.position.y >= transform.position.y + 20)
         {
             Destroy(gameObject, 0.5f);
         }
@@ -25,7 +25,7 @@ public class DespawnObstacle : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             rb.gravityScale = 0.5f;
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 5f);
         }
     }
 

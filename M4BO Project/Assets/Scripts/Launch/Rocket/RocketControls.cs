@@ -52,7 +52,7 @@ public class RocketControls : MonoBehaviour
             }
             rb.AddForce(DirX * GlobalData.HorizontalSpeed * transform.right);
             EnforceMaxHorizontalSpeed();
-            
+            anim.SetFloat("Direction", DirX);
         }
 
     }
@@ -78,19 +78,5 @@ public class RocketControls : MonoBehaviour
         {
             rb.velocity = new Vector2(-7, rb.velocity.y);
         }
-    }
-    internal void UpdateRocketSprite()
-    {
-        if (DirX < 0)
-        {
-            anim.SetBool("IsTurningRight", false);
-            anim.SetBool("IsTurningLeft", true);
-        }
-        else if (DirX > 0)
-        {
-            anim.SetBool("IsTurningLeft", false);
-            anim.SetBool("IsTurningRight", true);
-        }
-        // this sucks, but I gotta do this fast
     }
 }
