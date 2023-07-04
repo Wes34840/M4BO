@@ -63,7 +63,6 @@ public class ObstacleHandler : MonoBehaviour
         rocketPostOnLastCrateSpawn = rocket.position;
         float offset = Random.Range(-7.0f, 7.0f);
         int crate = Random.Range(0, 2);
-        Debug.Log(crate);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
         Instantiate(crates[crate], point, Quaternion.identity);
     }

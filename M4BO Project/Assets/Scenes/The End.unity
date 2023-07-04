@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 31062293}
   - component: {fileID: 31062292}
   m_Layer: 5
-  m_Name: Main Menu
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,8 +303,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: aae6069391b41434b81c61a236c2be30, type: 3}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 7eae3953946ca864caf86935f2e43ebd, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: aae6069391b41434b81c61a236c2be30, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

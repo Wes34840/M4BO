@@ -24,7 +24,6 @@ public class PanelUpdater : MonoBehaviour
         
         foreach (Transform panel in UpgradePanels)
         {
-            Debug.Log(panel.name);
             Transform[] PanelComponents = panel.GetComponentsInChildren<Transform>();
             TMP_Text[] textFields = new TMP_Text[3];
             foreach (Transform panelComponent in PanelComponents)
@@ -44,7 +43,6 @@ public class PanelUpdater : MonoBehaviour
                         DisplayInt(textFields[2], GlobalData.RocketStats[count].StatUpgradeCost);
                         break;
                     default:
-                        Debug.Log("Invalid");
                         break;
                 }
             }

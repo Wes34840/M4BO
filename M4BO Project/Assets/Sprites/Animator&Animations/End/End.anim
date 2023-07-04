@@ -115,7 +115,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 3
-    functionName: 
+    functionName: FinishGame
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

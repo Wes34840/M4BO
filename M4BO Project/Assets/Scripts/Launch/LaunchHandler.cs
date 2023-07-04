@@ -40,14 +40,14 @@ public class LaunchHandler : MonoBehaviour
         {
             LaunchData.FlightTime += Time.deltaTime;
         }
-
+        Debug.Log(LaunchData.HeightReached);
 
         if (Rocket.transform.position.y < (LaunchData.HeightReached / 10 - 1) && GameActive == true) // if rocket falls too far down
         {
             EndLaunch();
             Debug.Log("Ended");
         }
-        else if (LaunchData.HeightReached > GlobalData.EndHeight && GameActive == true)
+        else if (LaunchData.HeightReached >= GlobalData.EndHeight)
         {
             FinishGame();
             Debug.Log("Finished");
@@ -63,14 +63,13 @@ public class LaunchHandler : MonoBehaviour
 
     public void FinishGame()
     {
-        endFadeOut.SetBool("Finished Game", true);
+        endFadeOut.SetBool("FinishedGame", true);
     }
 
     public IEnumerator EndGameBuffer()
     {
         yield return new WaitForSeconds(2);
         earningsUI.SetActive(true);
-        Debug.Log("Awarded money");
         earningsScript.AwardMoney();
     }
 
