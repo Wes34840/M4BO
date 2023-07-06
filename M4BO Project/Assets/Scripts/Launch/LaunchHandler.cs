@@ -28,6 +28,7 @@ public class LaunchHandler : MonoBehaviour
         GameActive = true;
         LaunchData.HeightReached = 0;
         LaunchData.FlightTime = 0;
+        LaunchData.CratesPickedUp = 0;
     }
     
     void Update()
@@ -40,17 +41,14 @@ public class LaunchHandler : MonoBehaviour
         {
             LaunchData.FlightTime += Time.deltaTime;
         }
-        Debug.Log(LaunchData.HeightReached);
 
         if (Rocket.transform.position.y < (LaunchData.HeightReached / 10 - 1) && GameActive == true) // if rocket falls too far down
         {
             EndLaunch();
-            Debug.Log("Ended");
         }
         else if (LaunchData.HeightReached >= GlobalData.EndHeight)
         {
             FinishGame();
-            Debug.Log("Finished");
         }
     }
 

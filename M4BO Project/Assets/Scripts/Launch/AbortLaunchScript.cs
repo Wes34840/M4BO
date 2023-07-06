@@ -33,8 +33,8 @@ public class AbortLaunchScript : MonoBehaviour
             UpdateFillAlpha(0);
             abortProgress.value = 0f;
         }
-        
-        if (abortProgress.value == abortProgress.maxValue)
+
+        if (abortProgress.value == abortProgress.maxValue && handler.GameActive == true)
         {
             handler.EndLaunch();
         }

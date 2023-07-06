@@ -60,11 +60,11 @@ public class ObstacleHandler : MonoBehaviour
         {
             if (offset < 0)
             {
-                offset--;
+                offset -= 2;
             }
             else
             {
-                offset++;
+                offset += 2;
             } //bandaid fix but works 
         }
         GameObject obstacle = Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);  
