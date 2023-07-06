@@ -7,7 +7,7 @@ public class GlobalData
     // This Class is used to save the data used by all scenes, such as stats for the rocket used in launches but also modified in the upgrades scene
 
     public static float EndHeight = 100000f;
-    public static float Money = 0f;
+    public static float Money = 1500000f;
 
     internal static float MaxFuel = 100f;
     internal static float Thrust = 10f;

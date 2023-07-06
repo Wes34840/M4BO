@@ -17,5 +17,9 @@ public class UpdateHealthDisplay : MonoBehaviour
     void Update()
     {
         textField.text = healthSystem.rocketHealth.ToString();
+        if (healthSystem.rocketHealth < 0)
+        {
+            textField.text = "" + 0;
+        }
     }
 }
