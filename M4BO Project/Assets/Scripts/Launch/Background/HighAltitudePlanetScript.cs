@@ -24,11 +24,5 @@ public class HighAltitudePlanetScript : MonoBehaviour
                 Instantiate(planets[Random.Range(0, 3)], rocketPos, Quaternion.identity);
             }
         }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Vector3 rocketPos = new Vector3(rocket.position.x , rocket.position.y + 50, rocket.position.z);
-            Instantiate(planets[Random.Range(0, 3)], rocketPos, Quaternion.identity);
-
-        }
     }
 }

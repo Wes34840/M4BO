@@ -70,13 +70,13 @@ public class RocketControls : MonoBehaviour
 
     internal void EnforceMaxHorizontalSpeed()
     {
-        if (rb.velocity.x > 7)
+        if (rb.velocity.x > 9)
         {
-            rb.velocity = new Vector2(7, rb.velocity.y);
+            rb.velocity = new Vector2(9, rb.velocity.y);
         }
-        else if (rb.velocity.x < -7)
+        else if (rb.velocity.x < -9)
         {
-            rb.velocity = new Vector2(-7, rb.velocity.y);
+            rb.velocity = new Vector2(-9, rb.velocity.y);
         }
     }
 }

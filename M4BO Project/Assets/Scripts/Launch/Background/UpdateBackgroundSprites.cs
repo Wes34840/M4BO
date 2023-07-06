@@ -15,7 +15,7 @@ public class UpdateBackgroundSprites : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 5) && currentStage != Altitudes.Medium || Input.GetKeyDown(KeyCode.K))
+        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 5) && currentStage != Altitudes.Medium )
         {
             currentStage = Altitudes.Medium;
             animBackground.SetBool("GoToMedium", true);
@@ -23,7 +23,7 @@ public class UpdateBackgroundSprites : MonoBehaviour
             animAudio.SetBool("reachedMedium", true);
 
         }
-        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 2) && currentStage != Altitudes.High || Input.GetKeyDown(KeyCode.P))
+        if (LaunchData.HeightReached >= (GlobalData.EndHeight / 2) && currentStage != Altitudes.High)
         {
             currentStage = Altitudes.High;
             animBackground.SetBool("GoToHigh", true);

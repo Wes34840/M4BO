@@ -22,6 +22,9 @@ public class MeteorFalling : MonoBehaviour
             sprite.flipX = false;
         }
         velocity = new Vector2(velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y * 0.8f);
+    }
+    private void Update()
+    {
         transform.position += velocity * Time.deltaTime;
     }
 

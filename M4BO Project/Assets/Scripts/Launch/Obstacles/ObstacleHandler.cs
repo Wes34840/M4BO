@@ -53,10 +53,25 @@ public class ObstacleHandler : MonoBehaviour
     {
         int altitude = (int)altitudeHandler.currentStage;
         rocketPosOnLastObstSpawn.y = rocket.position.y + 10;
-        float offset = Random.Range(-7.0f, 7.0f);
+        float offset = Random.Range(-7.0f, 7.0f) - 0.3f;
         int obstacleInList = Random.Range(0, ObstacleList[altitude].Length);
         Vector2 point = new Vector2(spawnPoint.position.x + offset, spawnPoint.position.y);
-        Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);
+        if (ObstacleList[altitude][obstacleInList].name == "BigGullship" || ObstacleList[altitude][obstacleInList].name == "Gullship")
+        {
+            if (offset < 0)
+            {
+                offset--;
+            }
+            else
+            {
+                offset++;
+            } //bandaid fix but works 
+        }
+        GameObject obstacle = Instantiate(ObstacleList[altitude][obstacleInList], point, Quaternion.identity);  
+        if (obstacle.GetComponent<Rigidbody2D>() != null) 
+        {
+            obstacle.GetComponent<Rigidbody2D>().velocity = new Vector3((Random.Range(0, 2) * 2 - 1) * 3, obstacle.GetComponent<Rigidbody2D>().velocity.y);
+        }
     }
     internal void SpawnCrate()
     {
@@ -69,12 +84,12 @@ public class ObstacleHandler : MonoBehaviour
 
     private IEnumerator WaitForObstacleCooldown()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         ObstacleCooldown = false;
     }
     private IEnumerator WaitForCrateCooldown()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         CrateCooldown = false;
     }
  

@@ -11,7 +11,7 @@ public class SpeedRelativeToShip : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rocket = GameObject.Find("Rocket"); 
-        rb.velocity = new Vector2(rb.velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y * 0.65f);
+        rb.velocity = new Vector2(rb.velocity.x, rocket.GetComponent<Rigidbody2D>().velocity.y * 0.8f);
     }
 
 }
