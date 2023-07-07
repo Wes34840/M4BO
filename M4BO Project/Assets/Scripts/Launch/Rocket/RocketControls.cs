@@ -3,41 +3,60 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RocketControls : MonoBehaviour
 {
-    internal float DirX;
-    internal float DirY;
-
+    internal float bufferTime = 3;
+    
     internal float maxFuel;
     internal float Fuel;
 
     internal Rigidbody2D rb;
     internal Animator anim;
 
+    public float horizontalInput;
+    public float verticalInput;
+
     internal LaunchHandler launchHandler;
 
     public AudioSource audioSource;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
         maxFuel = GlobalData.MaxFuel;
-        Fuel =  maxFuel;
+        Fuel = maxFuel;
         launchHandler = GameObject.Find("Game Handler").GetComponent<LaunchHandler>();
 
         anim = GameObject.Find("RocketSprite").GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void OnMove(InputAction.CallbackContext ctx)
     {
+        horizontalInput = ctx.ReadValue<float>();
+        rb.AddForce(horizontalInput * GlobalData.HorizontalSpeed * transform.right);
+    }
+
+    public void PauseThruster(InputAction.CallbackContext ctx)
+    {
+        verticalInput = ctx.ReadValue<float>();
+    }
+
+    void FixedUpdate()
+    { 
+        // wait till 3 seconds have passed so people can react to
+        // the great scenery that is totally not clipping inside of itself lmfao
+        if (bufferTime > 0) 
+        {
+            bufferTime -= Time.deltaTime;
+        }
+
+        // I FUCKING LOVE IF STATEMENTS
         if (launchHandler.GameActive)
         {
-            DirX = Input.GetAxisRaw("Horizontal");
-            DirY = Input.GetAxisRaw("Vertical");
-            if (Fuel > 0 && DirY > 0)
+            if (Fuel > 0 && verticalInput == 0)
             {
                 Thrust();
                 if (!audioSource.isPlaying)
@@ -50,16 +69,18 @@ public class RocketControls : MonoBehaviour
                 anim.SetBool("hasThrust", false);
                 audioSource.Stop();
             }
-            rb.AddForce(DirX * GlobalData.HorizontalSpeed * transform.right);
+
+            rb.AddForce(horizontalInput * GlobalData.HorizontalSpeed * transform.right);
+
             EnforceMaxHorizontalSpeed();
-            anim.SetFloat("Direction", DirX);
+            anim.SetFloat("Direction", horizontalInput);
         }
 
     }
 
     private void Thrust()
     {
-        rb.AddForce(DirY * GlobalData.Thrust * transform.up);
+        rb.AddForce(GlobalData.Thrust * transform.up);
         if (rb.velocity.y >= GlobalData.MaxSpeed)
         {
             rb.velocity = new Vector2(rb.velocity.x, GlobalData.MaxSpeed);
